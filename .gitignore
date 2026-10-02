@@ -1,0 +1,12 @@
+/tools/.build/
+/out/
+/update/
+/data/*
+!/data/README.txt
+*.bin
+*.cue
+*.iso
+*.chd
+*.zip
+*.exe
+*.dll

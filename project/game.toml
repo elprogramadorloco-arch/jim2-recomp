@@ -1,0 +1,64 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Earthworm Jim 2"
+id = "SLES-00343"
+players = 1
+exe = "disc/SLES_003.43"
+disc = "@DISC_CUE@"
+load_address = "0x80010000"
+entry_pc = "0x80010E0C"
+text_size = "0x0000A000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Earthworm Jim 2 (Europe) (Track 01).bin"
+cue_name = "Earthworm Jim 2 (Europe).cue"
+boot_exe = "SLES_003.43"
+known_sizes = [33631248]
+known_md5 = [
+  "c26dfcf448fb3698e6d1b6a1f5f860d2",
+]
+known_sha1 = [
+  "20f726eeb8b9e969ad74675a9615e096c92d011c",
+]
+known_crc32 = [
+  "0173fafb",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "EarthwormJim2 Recompiled"
+memcard_dir = "saves"
+# Fast Boot (QoL, as in Bloody Roar II / SFA3): HLE boot-skip straight to the
+# game EXE. Set false to play the authentic BIOS boot (and for verification).
+bios_hle = true
+# TCP debug server for live analysis (stall_report.py / debug_client.py).
+debug_port = 4370
+# SLES_003.43 is only a loader; MENU / L1..L10 / END are separate PS-X EXEs
+# loaded at 0x80020000 (native via aot/overlays.json). Keep capturing anything
+# else streamed into RAM so tools/compile_overlays.py can turn it native.
+overlay_cache = true
+overlay_capture_history = true
+overlay_capture_persist_dir = "build-release"
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 15
+required_disc_fp = "e65b441a8fc1696c3296f90291798c324569c97d9a1d8912166ce4a67b403839"

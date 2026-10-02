@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "EarthwormJim2",
+    "id": "SLES-00343",
+    "boot_exe": "SLES_003.43"
+  },
+  "marketing": {
+    "description": "Earthworm Jim 2, 2D run-and-gun platformer (PAL).",
+    "publisher": "Virgin Interactive",
+    "year": "1996",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Earthworm Jim 2 (Europe).cue",
+    "bin_name": "Earthworm Jim 2 (Europe) (Track 01).bin",
+    "track_counts": [
+      15
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 33631248,
+      "md5": "c26dfcf448fb3698e6d1b6a1f5f860d2",
+      "sha1": "20f726eeb8b9e969ad74675a9615e096c92d011c",
+      "crc32": "0173fafb"
+    },
+    "disc_fp": "e65b441a8fc1696c3296f90291798c324569c97d9a1d8912166ce4a67b403839"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80010E0C",
+    "text_size": "0x0000A000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 108,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

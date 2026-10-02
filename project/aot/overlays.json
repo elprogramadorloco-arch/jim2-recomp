@@ -1,0 +1,49 @@
+{
+  "schema": "psxrecomp AOT methods v1",
+  "game_id": "SLES-00343",
+  "disc_hashes": {
+    "sha256": "d251cf65bb60ee375778f4369cf74fb88371e07eab51ec337c0ad34f8def932b"
+  },
+  "static_output": "generated/overlays_static.c",
+  "strict_bounds": true,
+  "images": [
+    {
+      "method": "psx_exe",
+      "files": [
+        "MENU/MENU.EXE",
+        "L1/GRAN.EXE",
+        "L1/TANG.EXE",
+        "L2/PUPS.EXE",
+        "L2/PUP2.EXE",
+        "L2/PUP3.EXE",
+        "L3/KING.EXE",
+        "L4/COWS.EXE",
+        "L5/HAMMER.EXE",
+        "L5/INFLT.EXE",
+        "L6/VILLI.EXE",
+        "L8/ATE.EXE",
+        "L8/FORKED.EXE",
+        "L8/FYAWN.EXE",
+        "L9/DOOR.EXE",
+        "L9/ISO.EXE",
+        "L10/RJR.EXE",
+        "END/END.EXE"
+      ]
+    },
+    {
+      "method": "psx_exe",
+      "files": [
+        "L7/DIRT.EXE"
+      ],
+      "excluded_ranges": [
+        {
+          "start": "0x8004c0fc",
+          "end": "0x80094800",
+          "sha256": "84f54683f950f159db45eaf92886527ad25e3761912c56205d38098758274b1b",
+          "reason": "DIRT.EXE .data/.rdata linked inside the PS-X EXE text: the last jr $ra is at 0x8004C0F4, no JAL in the code reaches past it, and the tail has no returns at all (tables, zero pages, reserved opcodes). Normal-mode discovery otherwise nominates data words as functions (e.g. 0x80080EE0) that fail the delay-slot audit."
+        }
+      ]
+    }
+  ],
+  "expected_records": 19
+}

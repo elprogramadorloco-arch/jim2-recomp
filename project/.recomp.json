@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "EarthwormJim2",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "EarthwormJim2Recomp",
+  "original": {
+    "region": "Europe",
+    "serial": "SLES-00343"
+  }
+}
