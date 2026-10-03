@@ -146,7 +146,11 @@ Write-Ok 'recompiler ready'
 
 # ------------------------------------------------------------ 6 generate --
 Write-Step 6 $Total 'Recompiling the game from your disc (loader + 19 game EXEs; this takes a while)'
-$genKey = "$fwKey|$((Get-FileHash -Algorithm SHA256 (Join-Path $PublicRoot 'project\aot\overlays.json')).Hash)|$((Get-FileHash -Algorithm SHA256 (Join-Path $PublicRoot 'project\seeds\ghidra_funcs.txt')).Hash)"
+# Inputs of the generated C: framework, AOT profile, seeds and game.toml (its
+# [recompiler] section lists the mod hook functions the C must call).
+$genInputs = 'project\aot\overlays.json', 'project\seeds\ghidra_funcs.txt', 'project\game.toml' |
+    ForEach-Object { (Get-FileHash -Algorithm SHA256 (Join-Path $PublicRoot $_)).Hash }
+$genKey = "$fwKey|$($genInputs -join '|')"
 $genDir = Join-Path $Proj 'generated'
 if ($Force -or (Get-StateValue $State 'generated') -ne $genKey -or -not (Test-Path (Join-Path $genDir 'overlays_static.c'))) {
     Invoke-Native $Python @((Join-Path $Proj 'psxrecomp\psxrecomp_cli.py'), 'generate', '--config', (Join-Path $Proj 'game.toml'),

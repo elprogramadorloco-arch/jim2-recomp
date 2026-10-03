@@ -46,6 +46,20 @@ Later runs of `run.bat` only redo the steps whose inputs changed.
 Do not share `data`, `out` or `tools\.build`: they contain your disc or code
 generated from it.
 
+### Widescreen 16:9 (partial)
+
+**Partial:** Puppy Love 1-3, Flyin' King and Lorenzo's Soil still play in
+their original 4:3 (their scenery is not drawn by the routine the patch
+widens). In the other levels, gameplay is shown in real 16:9: the game draws the extra scenery on both
+sides (nothing is stretched) and the HUD moves to the screen corners, keeping
+the same distance to the edge it had in 4:3. Menus, transition screens, videos
+and the ending stay in their original 4:3. It is on by default; turn it off in
+the launcher's **Mods** page (*Widescreen 16:9 (partial)*) to play the original 4:3.
+
+### Android
+
+An Android version is in development.
+
 ### Updates
 
 Run `update.bat`. It reads the latest GitHub Release, shows what's new,
@@ -60,7 +74,9 @@ If something fails, the previous version is restored.
 | Boot, menus, debug menu | OK |
 | All 17 levels load and play (checked against DuckStation) | OK |
 | Level-to-level transitions, FMV between levels, ending | Recompiled; not yet verified end to end |
+| Widescreen 16:9 (gameplay, HUD at the corners) | Partial: 13 of 17 levels |
 | Audio | SPU support in psxrecomp is still partial (some effects such as reverb) |
+| Android version | In development |
 
 ---
 
@@ -105,6 +121,21 @@ cambiaron. `run.bat -ValidateOnly` solo comprueba el disco y el espacio libre.
 No compartas `data`, `out` ni `tools\.build`: contienen tu disco o código
 generado a partir de él.
 
+### Widescreen 16:9 (parcial)
+
+**Parcial:** Puppy Love 1-3, Flyin' King y Lorenzo's Soil se siguen jugando
+en su 4:3 original (su escenario no lo dibuja la rutina que amplía el
+parche). En el resto de niveles, el gameplay se muestra en 16:9 real: el juego dibuja el escenario extra a
+ambos lados (nada se estira) y el HUD se coloca en las esquinas, con la misma
+distancia al borde que tenía en 4:3. Los menús, las pantallas de transición,
+los vídeos y el final se mantienen en su 4:3 original. Viene activado; puedes
+desactivarlo en la página **Mods** del launcher (*Widescreen 16:9 (partial)*) para jugar
+en el 4:3 original.
+
+### Android
+
+Se está trabajando en una versión para Android.
+
 ### Actualizaciones
 
 Ejecuta `update.bat`. Lee la última Release de GitHub, muestra las novedades,
@@ -119,7 +150,9 @@ cambió. Si algo falla, restaura la versión anterior.
 | Arranque, menús, menú de depuración | OK |
 | Los 17 niveles cargan y se juegan (comparados con DuckStation) | OK |
 | Transiciones entre niveles, vídeos entre niveles, final | Recompilados; sin verificar de principio a fin |
+| Widescreen 16:9 (gameplay, HUD en las esquinas) | Parcial: 13 de 17 niveles |
 | Audio | El soporte SPU de psxrecomp aún es parcial (algunos efectos como reverb) |
+| Versión para Android | En desarrollo |
 
 ---
 
@@ -164,6 +197,20 @@ As próximas execuções do `run.bat` só refazem as etapas cujas entradas mudar
 Não compartilhe `data`, `out` nem `tools\.build`: contêm seu disco ou código
 gerado a partir dele.
 
+### Widescreen 16:9 (parcial)
+
+**Parcial:** Puppy Love 1-3, Flyin' King e Lorenzo's Soil continuam no 4:3
+original (o cenário deles não é desenhado pela rotina que o patch amplia). Nas
+demais fases, o gameplay é exibido em 16:9 real: o jogo desenha o cenário extra dos dois
+lados (nada é esticado) e o HUD vai para os cantos da tela, mantendo a mesma
+distância da borda que tinha em 4:3. Menus, telas de transição, vídeos e o
+final continuam no 4:3 original. Vem ativado; desative na página **Mods** do
+launcher (*Widescreen 16:9 (partial)*) para jogar no 4:3 original.
+
+### Android
+
+Uma versão para Android está em desenvolvimento.
+
 ### Atualizações
 
 Execute `update.bat`. Ele lê a última Release do GitHub, mostra as novidades,
@@ -178,7 +225,9 @@ mudou. Se algo falhar, a versão anterior é restaurada.
 | Inicialização, menus, menu de depuração | OK |
 | As 17 fases carregam e são jogáveis (comparadas com o DuckStation) | OK |
 | Transições entre fases, vídeos entre fases, final | Recompilados; ainda não verificados de ponta a ponta |
+| Widescreen 16:9 (gameplay, HUD nos cantos) | Parcial: 13 de 17 fases |
 | Áudio | O suporte SPU do psxrecomp ainda é parcial (alguns efeitos como reverb) |
+| Versão para Android | Em desenvolvimento |
 
 ---
 

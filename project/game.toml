@@ -33,6 +33,10 @@ known_crc32 = [
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
+# 16:9 widescreen (ewj2.enhancement.widescreen): the tile-row routine of every
+# level EXE (two variants each), then the object emitter of every level EXE
+# (HUD edge anchoring). Identity unless that mod is active.
+mod_function_entry_funcs = ["0x80042224", "0x80042320", "0x8003B580", "0x8003B67C", "0x8003E694", "0x8003E790", "0x8003E540", "0x8003E63C", "0x8003E598", "0x8003E694", "0x80040E08", "0x80040F04", "0x8003F67C", "0x8003F778", "0x8003D03C", "0x8003D138", "0x8003D284", "0x8003D380", "0x800432E4", "0x800433E0", "0x8003DD80", "0x8003DE7C", "0x8003D030", "0x8003D12C", "0x8003CEE8", "0x8003CFE4", "0x8003D080", "0x8003D17C", "0x8003E780", "0x8003E87C", "0x8003EC44", "0x8003ED40", "0x8003CBB0", "0x8003CCAC", "0x8003DC6C", "0x80036FC8", "0x8003A0DC", "0x80039F88", "0x80039FE0", "0x8003C850", "0x8003B0C4", "0x80038A84", "0x80038CCC", "0x8003ED2C", "0x800397C8", "0x80038A78", "0x80038930", "0x80038AC8", "0x8003A1C8", "0x8003A68C", "0x800385F8"]
 
 [runtime]
 window_title = "EarthwormJim2 Recompiled"
@@ -52,6 +56,13 @@ overlay_capture_persist_dir = "build-release"
 [video]
 renderer = "opengl"
 aspect_ratio = "4:3"
+
+# 16:9 widescreen is owned by the ewj2.enhancement.widescreen mod. full_2d
+# marks EWJ2 as a pure 2D sprite game for the native-wide present path; it is
+# inert at 4:3.
+[widescreen]
+full_2d = true
+offer = false
 
 [controller]
 default_mode = "digital"

@@ -1,0 +1,22 @@
+format_version = 5
+id = "ewj2.enhancement.widescreen"
+version = "1.0.0"
+name = "Earthworm Jim 2 Widescreen"
+author = "elprogramadorloco-arch"
+description = "Partial 16:9 widescreen for gameplay: the game draws a wider view in most levels. Puppy Love, Flyin' King and Lorenzo's Soil stay 4:3."
+resolver = "declarative"
+save_compatibility = "shared"
+
+[[target]]
+game_id = "SLES-00343"
+
+[[feature]]
+id = "widescreen"
+name = "Widescreen 16:9 (partial)"
+description = "Wider 16:9 view in most levels, HUD at the screen corners. Puppy Love, Flyin' King and Lorenzo's Soil, menus and videos stay 4:3."
+group = "Display"
+default_enabled = true
+
+[[plugin]]
+feature = "widescreen"
+id = "ewj2.widescreen"
